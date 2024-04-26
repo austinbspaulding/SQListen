@@ -1,4 +1,4 @@
--- presents the longest song from each album
+-- presents the shortest song from each album
 SELECT
     filePath,
     duration,
