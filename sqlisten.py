@@ -181,7 +181,6 @@ if __name__ == "__main__":
                         f.write(delim + row[fileCol])
                         delim = "\n"
 
-                
     except Exception as exc:
         if 'db' in globals():
             db.closeDB()  # type: ignore
