@@ -1,5 +1,4 @@
 ---
-#test
 schema:
   - unmapped # The first list item is a table that is the default for any keys that don't have a matching override below
   - duration # The second list item is a table that is automatically populated with song length as a REAL in seconds
@@ -18,7 +17,6 @@ schema:
     initial_key: TEXT
     bpm: INTEGER
 
-#duration 
 filetypes:
   mp3:
     TALB:
@@ -60,5 +58,3 @@ filetypes:
       map_to: bpm
     "APIC:":
       parser: skip
-
-  flac:
