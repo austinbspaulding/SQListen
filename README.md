@@ -30,7 +30,7 @@ passing -q will quit sqlisten.
 
 -p will prevent saving playlists and will instead print their outputs to the console. Very helpful for debugging.
 
-files... is a list of any number of files containing a SQLite query. SQListen takes the first selected column of a query's result and turns it into a .m3u8 playlist named after the file containing the query. Passing -p prevents the playlist generation and prints the queries' outputs to the console instead.
+files... is a list of any number of files containing a SQLite query. After running a query, SQListen will attempt to find a selected column called filePath for use in playlist creation. If it fails, it will use the first column that contains a valid file path. SQListen will then take the final result and turn it into a .m3u8 playlist named after the file containing the query. Passing -p prevents the playlist generation and prints the queries' outputs to the console instead.
 
 # Database Schema
 

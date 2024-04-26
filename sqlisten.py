@@ -44,7 +44,7 @@ argParser.add_argument(
 
 interactiveParser = argparse.ArgumentParser(
     usage="[-h] [-q] [-p] files...",
-    epilog = "SQListen will attempt to find a selected row called filePath for use in playlist creation. "
+    epilog = "SQListen will attempt to find a selected column called filePath for use in playlist creation. "
     + "If it fails, it will use the first column that contains a valid file path",
     add_help=False
 )
