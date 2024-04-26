@@ -1,0 +1,64 @@
+---
+#test
+schema:
+  - unmapped # The first list item is a table that is the default for any keys that don't have a matching override below
+  - duration # The second list item is a table that is automatically populated with song length as a REAL in seconds
+  - # The third list item is a map of further tables that can be manually mapped to below
+    album: TEXT
+    title: TEXT
+    artist: TEXT
+    album_artist: TEXT
+    composer: TEXT
+    track: INTEGER
+    total_tracks: INTEGER
+    disc_number: INTEGER
+    total_discs: INTEGER
+    genre: TEXT
+    release_date: TEXT
+    initial_key: TEXT
+    bpm: INTEGER
+
+#duration 
+filetypes:
+  mp3:
+    TALB:
+      parser: string
+      map_to: album
+    TIT2:
+      parser: string
+      map_to: title
+    TPE1:
+      parser: string
+      map_to: artist
+    TPE2:
+      parser: string
+      map_to: album_artist
+    TCOM:
+      parser: string
+      map_to: composer
+    TRCK:
+      parser: fraction 
+      map_to:
+        - track
+        - total_tracks
+    TPOS:
+      parser: fraction
+      map_to:
+        - disc_number
+        - total_discs
+    TCON:
+      parser: string
+      map_to: genre
+    TDRC:
+      parser: date
+      map_to: release_date
+    TKEY:
+      parser: string
+      map_to: initial_key
+    TBPM:
+      parser: string
+      map_to: bpm
+    "APIC:":
+      parser: skip
+
+  flac:
